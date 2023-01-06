@@ -1,1 +1,130 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+@import 'assets/css/partials/includes';
+
+@include mat.core();
+
+
+// paletes
+$ngMaterial-primary: mat.define-palette(mat.$deep-purple-palette, A400);
+$ngMaterial-accent: mat.define-palette(mat.$amber-palette);
+
+$ngMaterial-warn: mat.define-palette(mat.$red-palette);
+
+
+$ngMaterial-theme: mat.define-light-theme((
+  color: (
+    primary: $ngMaterial-primary,
+    accent: $ngMaterial-accent,
+    warn: $ngMaterial-warn,
+  )
+));
+
+$foreground: map-get($ngMaterial-theme, foreground );
+$background: map-get($ngMaterial-theme, background );
+
+
+
+@include mat.all-component-themes($ngMaterial-theme);
+
+.primary{
+  color: mat.get-color-from-palette($ngMaterial-primary);
+}
+
+.accent{
+  color: mat.get-color-from-palette($ngMaterial-accent);
+}
+
+.warn{
+  color: mat.get-color-from-palette($ngMaterial-warn);
+}
+
+.bg{
+  background: mat.get-color-from-palette($foreground, text);
+}
+
+.text-light{
+  color: mat.get-color-from-palette($background, card);
+
+}
+
+.mat-mdc-outlined-button:not(:disabled) {
+  border-color: none !important
+}
+
+//custome snamcbar
+
+.success-snackbar,
+.error-snackbar,
+.warning-snackbar{
+  background: #292929 !important;
+  color: whitesmoke !important;
+  position: relative;
+  overflow: hidden;
+  &::before{
+    content: "";
+    width: 140px;
+    height: 90px;
+    border-radius: 50%;
+    background: #01dc6a;
+    left: -40px;
+    z-index: -1;
+    top: -10px;
+    filter: blur(56px);
+  }
+}
+.success-snackbar{
+  &::before{
+    background: #01dc6a;
+  }
+  .mat-icon{
+    color: #01dc6a;
+  }
+}
+
+.error-snackbar{
+  &::before{
+    background: #fe3451;
+  }
+  .mat-icon{
+    color: #fe3451;
+  }
+}
+
+.warning-snackbar{
+  &::before{
+    background: #ffcc00;
+  }
+  .mat-icon{
+    color: #ffcc00;
+  }
+}
+
+.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  background-color: inherit !important;
+  border-radius: inherit !important;
+  box-shadow: inset !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

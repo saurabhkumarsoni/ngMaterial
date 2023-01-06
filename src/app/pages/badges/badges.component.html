@@ -1,0 +1,31 @@
+<div class="container">
+    <h3>Badges</h3>
+    <mat-divider></mat-divider>
+    <div class="row">
+        <mat-divider></mat-divider>
+        <br />
+
+        <div class="col-1"></div>
+        <div class="col-5 mt-2">
+            <h3>Example #1</h3>
+            <button matBadge="4" mat-stroked-button color="primary">Open Dialog</button>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p><span  matBadge="4" matBadgeOverlap="false" matBadgeSize="small" matBadgeColor="accent"> Welcome to hour learning</span></p>
+            <p><span  matBadge="4" matBadgeOverlap="false" matBadgeSize="medium"> Welcome to hour learning</span></p>
+            <p><span  matBadge="4" matBadgeOverlap="false" matBadgeSize="large" matBadgeColor="warn"> Welcome to hour learning</span></p>
+        </div>
+        <div class="col-5 mt-2">
+            <h3>Example #2 Add or Remove cart item</h3>
+           <button mat-mini-fab color="primary" (click)="onAdd()">
+            <mat-icon>add</mat-icon>
+           </button>
+                <span class="mx-2">{{count}}</span> 
+           <button  mat-mini-fab color="primary" (click)="onRemove()">
+            <mat-icon>remove</mat-icon>
+           </button>
+        </div>
+    </div>
+</div>

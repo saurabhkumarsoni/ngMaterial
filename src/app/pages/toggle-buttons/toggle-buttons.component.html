@@ -1,0 +1,78 @@
+<div class="container">
+    <h3>Toggle Buttons</h3>
+    <mat-divider></mat-divider>
+    <div class="row">
+        <mat-divider></mat-divider>
+        <br/>
+        <div class="col-1"></div>
+        <div class="col-5 mt-2">
+            <h2>Ex. 01 Single Button Toggle</h2>
+            <mat-button-toggle #myToggle (change)="onSingleButtonToggle($event)">{{myToggle.checked? 'Active': 'Inactive'}}</mat-button-toggle>
+            {{myToggle.checked}}
+        </div>
+
+        <div class="col-5 mt-2">
+            <h2>Ex. 02 Button Toggle Group</h2>
+
+            <mat-button-toggle-group #myGrp="matButtonToggleGroup" (change)="onSelectAligment($event)">
+                <mat-button-toggle value="left"><mat-icon>format_align_left</mat-icon></mat-button-toggle>
+                <mat-button-toggle value="center"><mat-icon>format_align_center</mat-icon></mat-button-toggle>
+                <mat-button-toggle value="right"><mat-icon>format_align_right</mat-icon></mat-button-toggle>
+                <mat-button-toggle value="justify"><mat-icon>format_align_justify</mat-icon></mat-button-toggle>
+            </mat-button-toggle-group>
+            <br/>
+            <br/>
+            <p [style.text-align]="myGrp.value">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco lab</p>
+        </div>
+
+        <br/>
+        <div class="col-1"></div>
+        <div class="col-5 mt-2">
+            <h2>Ex. 03 multiple selection</h2>
+
+            <mat-button-toggle-group #myGrp2="matButtonToggleGroup" multiple>
+                <mat-button-toggle value="Angular">Angular</mat-button-toggle>
+                <mat-button-toggle value="React">React</mat-button-toggle>
+                <mat-button-toggle value="Java">Java</mat-button-toggle>
+                <mat-button-toggle value="Vue">Vue</mat-button-toggle>
+            </mat-button-toggle-group>
+            <br/>
+            {{myGrp2.value}}
+            <br/>
+            <p [style.text-align]="myGrp.value">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco lab</p>
+        </div>
+
+        <div class="col-5 mt-2">
+            <h2>Ex. 04 Template Driven Form</h2>
+
+            <mat-button-toggle-group [(ngModel)]="fontStyle" aria-label="Font Style">
+                <mat-button-toggle value="bold">Bold</mat-button-toggle>
+                <mat-button-toggle value="italic">Italic</mat-button-toggle>
+                <mat-button-toggle value="underline">Underline</mat-button-toggle>
+              </mat-button-toggle-group>
+              <p>Chosen value is {{fontStyle}}</p>
+            <br/>
+            {{myGrp2.value}}
+            <br/>
+            <p [style.text-align]="myGrp.value">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco lab</p>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-5 mt-2">
+            <h2>Ex. 05 Reactive Form</h2>
+
+            <mat-button-toggle-group [formControl]="fontStyleControl" aria-label="Font Style">
+                <mat-button-toggle value="bold">Bold</mat-button-toggle>
+                <mat-button-toggle value="italic">Italic</mat-button-toggle>
+                <mat-button-toggle value="underline">Underline</mat-button-toggle>
+              </mat-button-toggle-group>
+              <p>Chosen value is {{fontStyleControl.value}}</p>
+            <br/>
+           
+            <br/>
+            <p [style.text-align]="myGrp.value">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco lab</p>
+        </div>
+
+   
+</div>
+
+</div>

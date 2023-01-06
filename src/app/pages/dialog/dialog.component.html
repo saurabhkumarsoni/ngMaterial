@@ -1,0 +1,80 @@
+<div class="container">
+    <h3>Badges</h3>
+    <mat-divider></mat-divider>
+    <div class="wrapper mt-3">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-5 mt-2" style="height: 300px;">
+                <h3> EX 01 # Simple Dialog</h3>
+                <button mat-button color="primary" (click)="openDialog()">Open Dialog</button>
+            </div>
+
+            <div class="col-5 mt-2 ml-2" style="height: 300px;">
+                <h3> EX 02 # Dialog with Data</h3>
+                <ol class="pr-5">
+                    <li>
+                      <mat-form-field appearance="fill">
+                        <mat-label>What's your name?</mat-label>
+                        <input matInput [(ngModel)]="name">
+                      </mat-form-field>
+                    </li>
+                    <li>
+                      <button mat-stroked-button mat-stroked-button color="warn"
+                       (click)="openDialog1()">Open Dailog
+                    </button>
+                    </li>
+                    <li *ngIf="animal">
+                      You chose: <i>{{animal}}</i>
+                    </li>
+                  </ol>
+            </div>
+
+            <div class="col-1"></div>
+            <div class="col-5 mt-2 ml-2" style="height: 300px;">
+                <h3> EX 03 # Global Prompt Dialog</h3>
+                <ol class="pr-5">
+                    <li>
+                      <mat-form-field appearance="fill">
+                        <mat-label>Prompy Title</mat-label>
+                        <input matInput [(ngModel)]="promptTitle">
+                      </mat-form-field>
+                    </li>
+                    <li>
+                        <mat-form-field appearance="fill">
+                          <mat-label>Prompy Text</mat-label>
+                          <input matInput [(ngModel)]="promptText">
+                        </mat-form-field>
+                      </li>
+                    <li>
+                      <button mat-stroked-button mat-stroked-button color="warn"
+                       (click)="openDialog2()">Open Dailog
+                    </button>
+                    </li>
+                    <li *ngIf="promptResult">
+                      You chose: <i>{{promptResult}}</i>
+                    </li>
+                  </ol>
+            </div>
+
+            <div class="col-5 mt-2" style="height: 300px;">
+                <h3> EX 04 # Global Prompt Dialog delete list</h3>
+            <mat-list>
+                <mat-list-item *ngFor="let note of list; let i = index">
+                      <mat-list-item>
+                        <h3 matLine>{{ note.name }}</h3>
+                        
+                        <button mat-mini-fab color="primary" (click)="onDelete(i)" class="delete-button" aria-label="Example icon button with a menu icon">
+                            <mat-icon>close</mat-icon>
+                          </button>
+                        <div class="parent-mat-divider">
+                          <mat-divider></mat-divider>
+                        </div>
+                      </mat-list-item>
+                  </mat-list-item>
+                </mat-list>
+            </div>
+
+
+        </div>
+    </div>
+</div>
